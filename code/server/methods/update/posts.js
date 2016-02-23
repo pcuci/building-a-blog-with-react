@@ -1,3 +1,5 @@
+import Posts from '/imports/collections/posts'
+
 Meteor.methods({
   savePost(post) {
     check(post, Object);

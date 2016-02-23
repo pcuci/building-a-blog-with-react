@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Posts from '/imports/collections/posts'
 
 SinglePost = React.createClass({
   mixins: [ReactMeteorData],

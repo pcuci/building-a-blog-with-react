@@ -1,4 +1,4 @@
-Posts = new Mongo.Collection('posts');
+const Posts = new Mongo.Collection('posts');
 
 Posts.allow({
   insert: () => false,
@@ -72,3 +72,5 @@ let PostsSchema = new SimpleSchema({
 });
 
 Posts.attachSchema(PostsSchema);
+
+export default Posts

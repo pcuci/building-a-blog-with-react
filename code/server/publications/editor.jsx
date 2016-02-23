@@ -1,3 +1,5 @@
+import Posts from '/imports/collections/posts'
+
 Meteor.publish('editor', (postId) => {
   check(postId, String);
 

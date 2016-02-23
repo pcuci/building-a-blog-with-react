@@ -1,3 +1,5 @@
+import Posts from '/imports/collections/posts'
+
 Meteor.publish('postsIndex', function() {
   return Posts.find({ published: true });
 });
