@@ -9,7 +9,6 @@ jquery
 check
 audit-argument-checks
 themeteorchef:jquery-validation
-twbs:bootstrap
 browser-policy
 meteorhacks:npm
 
@@ -35,7 +34,7 @@ random
 kadira:react-layout
 ongoworks:speakingurl
 themeteorchef:commonmark
-standard-minifier-css
-standard-minifier-js
 arillo:flow-router-helpers
 react-meteor-data
+seba:minifiers-autoprefixer
+twbs:bootstrap@4.0.0-alpha2

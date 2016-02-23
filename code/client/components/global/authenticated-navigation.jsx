@@ -31,8 +31,8 @@ AuthenticatedNavigation = React.createClass({
   },
   render() {
     return <div className="authenticated-navigation">
-      <NavBarNav position={ `navbar-left` } items={ this.data.items.left } />
-      <NavBarNav position={ `navbar-right` } items={ this.data.items.right } />
+      <NavBarNavigation position={ `pull-xs-left` } items={ this.data.items.left } />
+      <NavBarNavigation position={ `pull-xs-right` } items={ this.data.items.right } />
     </div>;
   }
 });

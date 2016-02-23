@@ -14,7 +14,7 @@ PublicNavigation = React.createClass({
   },
   render() {
     return <div className="public-navigation">
-      <NavBarNav position={ `navbar-right` } items={ this.data.items.right } />
+      <NavBarNavigation items={ this.data.items.right } />
     </div>;
   }
 });

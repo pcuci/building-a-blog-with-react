@@ -42,7 +42,7 @@ PostsIndex = React.createClass({
   render() {
     return <div className="posts">
       <GridRow>
-        <GridColumn className="col-xs-12 col-sm-8 col-sm-offset-2">
+        <GridColumn className="col-xs-12 col-sm-8">
           { this.renderHeader() }
           { this.renderPosts() }
         </GridColumn>

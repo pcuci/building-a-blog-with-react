@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-NavBarNav = React.createClass({
+NavBarNavigation = React.createClass({
   renderDropdown(item, index) {
     let active = item.active ? 'dropdown active' : '';
-    return <li key={ `nav-item-${ item.uid }` } className={ active }>
-      <a href={ item.href } className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+    return <li className="nav-item" key={ `nav-item-${ item.uid }` } className={ active }>
+      <a href={ item.href } className="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
         { item.label } <span className="caret"></span>
       </a>
       <DropdownMenu items={ item.dropdownItems } />
@@ -13,8 +13,8 @@ NavBarNav = React.createClass({
   },
   renderItem(item, index) {
     let active = item.active ? 'active' : '';
-    return <li key={ `nav-item-${ item.uid }` } className={ active }>
-      <a href={ item.href }>{ item.label }</a>
+    return <li className="nav-item" key={ `nav-item-${ item.uid }` } className={ active }>
+      <a className="nav-link" href={ item.href }>{ item.label }</a>
     </li>;
   },
   render() {

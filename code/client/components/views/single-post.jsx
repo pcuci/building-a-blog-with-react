@@ -15,7 +15,7 @@ SinglePost = React.createClass({
   render() {
     if (!this.data) { return <div />; }
     return <GridRow>
-      <GridColumn className="col-xs-12 col-sm-8 col-sm-offset-2">
+      <GridColumn className="col-xs-12 col-sm-8">
         <Post singlePost={ true } post={ this.data.ready && this.data && this.data.post } />
       </GridColumn>
     </GridRow>;
