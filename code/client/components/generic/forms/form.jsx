@@ -1,3 +1,6 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
 Form = React.createClass({
   handleSubmit(event) {
     event.preventDefault();

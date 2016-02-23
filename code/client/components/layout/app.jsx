@@ -1,3 +1,6 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
 App = React.createClass({
   mixins: [ReactMeteorData],
   getMeteorData() {

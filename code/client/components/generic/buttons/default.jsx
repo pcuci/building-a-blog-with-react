@@ -1,3 +1,6 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
 DefaultButton = React.createClass({
   render() {
     return <Button

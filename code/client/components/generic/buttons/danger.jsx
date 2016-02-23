@@ -1,3 +1,6 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
 DangerButton = React.createClass({
   render() {
     return <Button

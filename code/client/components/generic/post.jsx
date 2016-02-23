@@ -1,7 +1,10 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
 Post = React.createClass({
   getPostTitle() {
     let post = this.props.post;
-    
+
     if (this.props.singlePost) {
       return <h3>{ post.title }</h3>;
     } else {

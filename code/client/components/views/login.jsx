@@ -1,3 +1,6 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
 Login = React.createClass({
   validations() {
     let component = this;

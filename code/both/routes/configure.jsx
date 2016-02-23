@@ -1,3 +1,6 @@
+import React from 'react';
+import {mount} from 'react-mounter';
+
 FlowRouter.notFound = {
   name: 'notFound',
   action() {

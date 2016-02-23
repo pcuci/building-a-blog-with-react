@@ -1,3 +1,6 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
 NavBar = React.createClass({
   render() {
     return <nav className="navbar navbar-default" role="navigation">

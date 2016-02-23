@@ -1,3 +1,6 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
 AppHeader = React.createClass({
   mixins: [ReactMeteorData],
   getMeteorData() {
@@ -7,7 +10,7 @@ AppHeader = React.createClass({
     };
   },
   render() {
-    return <NavBar id="app-header" brandLink={ this.data.brandLink } brand="HD Buff">
+    return <NavBar id="app-header" brandLink={ this.data.brandLink } brand="Blog">
       { this.props.hasUser ? <AuthenticatedNavigation user={ this.data.user } /> : <PublicNavigation /> }
     </NavBar>;
   }

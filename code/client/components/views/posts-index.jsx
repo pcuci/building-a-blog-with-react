@@ -1,3 +1,6 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
 PostsIndex = React.createClass({
   mixins: [ReactMeteorData],
   getMeteorData() {
@@ -22,7 +25,7 @@ PostsIndex = React.createClass({
     } else {
       return <Jumbotron className="blog-header">
         <h2>Get Buff</h2>
-        <h4>A new blog by the HD Buff crew.</h4>
+        <h4>A new blog by the SamErgo crew.</h4>
       </Jumbotron>;
     }
   },

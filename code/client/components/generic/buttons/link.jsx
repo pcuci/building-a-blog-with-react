@@ -1,3 +1,6 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
 LinkButton = React.createClass({
   render() {
     return <Button

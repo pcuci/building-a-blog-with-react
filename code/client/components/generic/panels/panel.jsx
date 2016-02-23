@@ -1,3 +1,6 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
 Panel = React.createClass({
   render() {
     let style   = this.props.style,

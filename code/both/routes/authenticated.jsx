@@ -1,3 +1,6 @@
+import React from 'react';
+import {mount} from 'react-mounter';
+
 const authenticatedRoutes = FlowRouter.group({
   name: 'authenticated'
 });
@@ -5,13 +8,13 @@ const authenticatedRoutes = FlowRouter.group({
 authenticatedRoutes.route('/posts', {
   name: 'posts',
   action() {
-    ReactLayout.render(App, { yield: <PostsList /> });
+    mount(App, { yield: <PostsList /> });
   }
 });
 
 authenticatedRoutes.route('/posts/:_id/edit', {
   name: 'editor',
   action(params) {
-    ReactLayout.render(App, { yield: <Editor post={ params._id } /> });
+    mount(App, { yield: <Editor post={ params._id } /> });
   }
 });
