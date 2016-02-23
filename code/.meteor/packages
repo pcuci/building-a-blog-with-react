@@ -16,7 +16,6 @@ meteorhacks:npm
 
 themeteorchef:bert
 meteorhacks:ssr
-standard-minifiers
 
 
 npm-container
@@ -39,4 +38,6 @@ random
 kadira:react-layout
 ongoworks:speakingurl
 themeteorchef:commonmark
-momentjs:moment
+standard-minifier-css
+standard-minifier-js
+arillo:flow-router-helpers

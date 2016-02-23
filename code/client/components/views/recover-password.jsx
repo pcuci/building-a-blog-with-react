@@ -19,19 +19,19 @@ RecoverPassword = React.createClass({
         let { getValue } = ReactHelpers;
 
         let form  = component.refs.recoverPasswordForm.refs.form,
-            email = getValue( form, '[name="emailAddress"]' );
+            email = getValue(form, '[name="emailAddress"]');
 
-        Accounts.forgotPassword( { email: email }, ( error ) => {
-          if ( error ) {
-            Bert.alert( error.reason, 'warning' );
+        Accounts.forgotPassword({ email: email }, (error) => {
+          if (error) {
+            Bert.alert(error.reason, 'warning');
           } else {
-            Bert.alert( 'Check your inbox for a reset link!', 'success' );
+            Bert.alert('Check your inbox for a reset link!', 'success');
           }
         });
       }
     };
   },
-  handleSubmit( event ) {
+  handleSubmit(event) {
     event.preventDefault();
   },
   render() {

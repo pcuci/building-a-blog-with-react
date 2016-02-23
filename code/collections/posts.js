@@ -1,4 +1,4 @@
-Posts = new Mongo.Collection( 'posts' );
+Posts = new Mongo.Collection('posts');
 
 Posts.allow({
   insert: () => false,
@@ -17,7 +17,7 @@ let PostsSchema = new SimpleSchema({
     type: Boolean,
     label: "Is this post published?",
     autoValue() {
-      if ( this.isInsert ) {
+      if (this.isInsert) {
         return false;
       }
     }
@@ -26,8 +26,8 @@ let PostsSchema = new SimpleSchema({
     type: String,
     label: "The ID of the author of this post.",
     autoValue() {
-      let user = Meteor.users.findOne( { _id: this.userId } );
-      if ( user ) {
+      let user = Meteor.users.findOne({ _id: this.userId });
+      if (user) {
         return `${ user.profile.name.first } ${ user.profile.name.last }`;
       }
     }
@@ -36,7 +36,7 @@ let PostsSchema = new SimpleSchema({
     type: String,
     label: "The date this post was last updated on.",
     autoValue() {
-      return ( new Date() ).toISOString();
+      return (new Date()).toISOString();
     }
   },
   "title": {
@@ -49,10 +49,10 @@ let PostsSchema = new SimpleSchema({
     label: "The slug for this post.",
     autoValue() {
       let slug              = this.value,
-          existingSlugCount = Posts.find( { _id: { $ne: this.docId }, slug: new RegExp( slug ) } ).count(),
-          existingUntitled  = Posts.find( { slug: { $regex: /untitled-post/i } } ).count();
+          existingSlugCount = Posts.find({ _id: { $ne: this.docId }, slug: new RegExp(slug) }).count(),
+          existingUntitled  = Posts.find({ slug: { $regex: /untitled-post/i } }).count();
 
-      if ( slug ) {
+      if (slug) {
         return existingSlugCount > 0 ? `${ slug }-${ existingSlugCount + 1 }` : slug;
       } else {
         return existingUntitled > 0 ? `untitled-post-${ existingUntitled + 1 }` : 'untitled-post';
@@ -71,4 +71,4 @@ let PostsSchema = new SimpleSchema({
   }
 });
 
-Posts.attachSchema( PostsSchema );
+Posts.attachSchema(PostsSchema);

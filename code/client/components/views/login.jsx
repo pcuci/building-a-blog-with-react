@@ -25,20 +25,20 @@ Login = React.createClass({
         let { getValue } = ReactHelpers;
 
         let form     = component.refs.loginForm.refs.form,
-            email    = getValue( form, '[name="emailAddress"]' ),
-            password = getValue( form, '[name="password"]' );
+            email    = getValue(form, '[name="emailAddress"]'),
+            password = getValue(form, '[name="password"]');
 
-        Meteor.loginWithPassword( email, password, ( error ) => {
-          if ( error ) {
-            Bert.alert( error.reason, 'danger' );
+        Meteor.loginWithPassword(email, password, (error) => {
+          if (error) {
+            Bert.alert(error.reason, 'danger');
           } else {
-            Bert.alert( 'Logged in!', 'success' );
+            Bert.alert('Logged in!', 'success');
           }
         });
       }
     };
   },
-  handleSubmit( event ) {
+  handleSubmit(event) {
     event.preventDefault();
   },
   render() {

@@ -1,5 +1,5 @@
 PublicNavigation = React.createClass({
-  mixins: [ ReactMeteorData ],
+  mixins: [ReactMeteorData],
   getMeteorData() {
     return {
       items: {

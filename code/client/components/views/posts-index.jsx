@@ -1,21 +1,21 @@
 PostsIndex = React.createClass({
-  mixins: [ ReactMeteorData ],
+  mixins: [ReactMeteorData],
   getMeteorData() {
     let query = {};
 
-    if ( this.props.tag ) {
-      Meteor.subscribe( 'tagsIndex', this.props.tag );
+    if (this.props.tag) {
+      Meteor.subscribe('tagsIndex', this.props.tag);
       query = { tags: { $in: [ this.props.tag ] } };
     } else {
-      Meteor.subscribe( 'postsIndex' );
+      Meteor.subscribe('postsIndex');
     }
 
     return {
-      posts: Posts.find( query, { sort: { updated: -1 } } ).fetch()
+      posts: Posts.find(query, { sort: { updated: -1 } }).fetch()
     };
   },
   renderHeader() {
-    if ( this.props.tag ) {
+    if (this.props.tag) {
       return <Jumbotron className="tags-header">
         <h4>Posts tagged with: { this.props.tag }.</h4>
       </Jumbotron>;
@@ -27,8 +27,8 @@ PostsIndex = React.createClass({
     }
   },
   renderPosts() {
-    if ( this.data.posts.length > 0 ) {
-      return this.data.posts.map( ( post ) => {
+    if (this.data.posts.length > 0) {
+      return this.data.posts.map((post) => {
         return <Post key={ post._id } post={ post } />;
       });
     } else {

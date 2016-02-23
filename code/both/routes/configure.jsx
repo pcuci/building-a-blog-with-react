@@ -1,13 +1,13 @@
 FlowRouter.notFound = {
   name: 'notFound',
   action() {
-    ReactLayout.render( App, { yield: <NotFound /> } );
+    ReactLayout.render(App, { yield: <NotFound /> });
   }
 };
 
-Accounts.onLogin( () => {
+Accounts.onLogin(() => {
   let currentRoute = FlowRouter.current();
-  if ( currentRoute && currentRoute.route.group.name === 'public' ) {
-    FlowRouter.go( 'posts' );
+  if (currentRoute && currentRoute.route.group.name === 'public') {
+    FlowRouter.go('posts');
   }
 });

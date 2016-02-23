@@ -1,10 +1,10 @@
 App = React.createClass({
-  mixins: [ ReactMeteorData ],
+  mixins: [ReactMeteorData],
   getMeteorData() {
     return {
       loggingIn: Meteor.loggingIn(),
       hasUser: !!Meteor.user(),
-      isPublic( route ) {
+      isPublic(route) {
         return [
           'index',
           'singlePost',
@@ -13,10 +13,10 @@ App = React.createClass({
           'recoverPassword',
           'resetPassword',
           'notFound'
-        ].indexOf( route ) > -1;
+        ].indexOf(route) > -1;
       },
       canView() {
-        return this.isPublic( FlowRouter.getRouteName() ) || !!Meteor.user();
+        return this.isPublic(FlowRouter.getRouteName()) || !!Meteor.user();
       }
     };
   },

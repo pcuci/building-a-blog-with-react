@@ -1,5 +1,5 @@
 AuthenticatedNavigation = React.createClass({
-  mixins: [ ReactMeteorData ],
+  mixins: [ReactMeteorData],
   getMeteorData() {
     let userEmail = Meteor.user().emails[0].address;
 
@@ -16,8 +16,8 @@ AuthenticatedNavigation = React.createClass({
             dropdown: true,
             dropdownItems: [
               { uid: 'logout', href: '#', label: 'Logout', action: () => {
-                return Meteor.logout( () => {
-                  FlowRouter.go( 'index' );
+                return Meteor.logout(() => {
+                  FlowRouter.go('index');
                 });
               }}
             ]

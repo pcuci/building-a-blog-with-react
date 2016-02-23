@@ -1,6 +1,6 @@
 FormControl = React.createClass({
   renderLabel() {
-    if ( !this.props.labelLink ) {
+    if (!this.props.labelLink) {
       return <label htmlFor={ this.props.name }>
         { this.props.label }
       </label>;
@@ -14,7 +14,7 @@ FormControl = React.createClass({
     }
   },
   renderCheckbox() {
-    if ( this.props.defaultValue ) {
+    if (this.props.defaultValue) {
       return <input
         defaultChecked={ true }
         type="checkbox"

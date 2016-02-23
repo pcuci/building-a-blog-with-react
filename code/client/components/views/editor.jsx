@@ -1,15 +1,13 @@
 Editor = React.createClass({
-  mixins: [ ReactMeteorData ],
+  mixins: [ReactMeteorData],
   getMeteorData() {
-    Meteor.subscribe( 'editor', this.props.post );
-
+    Meteor.subscribe('editor', this.props.post);
     return {
-      post: Posts.findOne( { _id: this.props.post } )
+      post: Posts.findOne({ _id: this.props.post })
     };
   },
   validations() {
     let component = this;
-
     return {
       rules: {
         postTitle: {
@@ -23,56 +21,55 @@ Editor = React.createClass({
       },
       submitHandler() {
         let { getValue, isChecked } = ReactHelpers;
-
         let form = component.refs.editPostForm.refs.form,
             post = {
               _id: component.props.post,
-              title: getValue( form, '[name="postTitle"]' ),
-              slug: getValue( form, '[name="postSlug"]' ),
-              content: getValue( form, '[name="postContent"]' ),
-              published: isChecked( form, '[name="postPublished"]' ),
-              tags: getValue( form, '[name="postTags"]' ).split( ',' ).map( ( string ) => {
+              title: getValue(form, '[name="postTitle"]'),
+              slug: getValue(form, '[name="postSlug"]'),
+              content: getValue(form, '[name="postContent"]'),
+              published: isChecked(form, '[name="postPublished"]'),
+              tags: getValue(form, '[name="postTags"]').split(',').map((string) => {
                 return string.trim();
               })
             };
-
-        Meteor.call( 'savePost', post, ( error, response ) => {
-          if ( error ) {
-            Bert.alert( error.reason, 'danger' );
+        Meteor.call('savePost', post, (error, response) => {
+          if (error) {
+            Bert.alert(error.reason, 'danger');
           } else {
-            Bert.alert( 'Post saved!', 'success' );
+            FlowRouter.go('posts');
+            Bert.alert('Post saved!', 'success');
           }
         });
       }
     };
   },
-  generateSlug( event ) {
+  generateSlug(event) {
     let { setValue } = ReactHelpers,
         form         = this.refs.editPostForm.refs.form,
         title        = event.target.value;
 
-    setValue( form, '[name="postSlug"]', getSlug( title, { custom: { "'": "" } } ) );
+    setValue(form, '[name="postSlug"]', getSlug(title, { custom: { "'": "" } }));
   },
   getLastUpdate() {
-    if ( this.data ) {
+    if (this.data) {
       let { formatLastUpdate } = ReactHelpers,
           post                 = this.data.post;
 
-      return `${ formatLastUpdate( post.updated ) } by ${ post.author }`;
+      return `${ formatLastUpdate(post.updated) } by ${ post.author }`;
     }
   },
   getTags() {
     let post = this.data.post;
 
-    if ( post && post.tags ) {
-      return post.tags.join( ', ' );
+    if (post && post.tags) {
+      return post.tags.join(', ');
     }
   },
-  handleSubmit( event ) {
+  handleSubmit(event) {
     event.preventDefault();
   },
   render() {
-    if ( !this.data.post ) { return <div />; }
+    if (!this.data.post) { return <div />; }
 
     return <GridRow>
       <GridColumn className="col-xs-12 col-sm-8 col-sm-offset-2">

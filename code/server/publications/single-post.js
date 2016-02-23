@@ -1,5 +1,5 @@
-Meteor.publish( 'singlePost', ( postSlug ) => {
-  check( postSlug, String );
+Meteor.publish('singlePost', (postSlug) => {
+  check(postSlug, String);
 
-  return Posts.find( { slug: postSlug } );
+  return Posts.find({ slug: postSlug });
 });

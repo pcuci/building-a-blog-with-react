@@ -1,5 +1,5 @@
 AppHeader = React.createClass({
-  mixins: [ ReactMeteorData ],
+  mixins: [ReactMeteorData],
   getMeteorData() {
     return {
       brandLink: !!Meteor.user() ? '/posts' : '/',

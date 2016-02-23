@@ -29,19 +29,19 @@ ResetPassword = React.createClass({
 
         let form     = component.refs.resetPasswordForm.refs.form,
             token    = component.props.token,
-            password = getValue( form, '[name="password"]' );
+            password = getValue(form, '[name="password"]');
 
-        Accounts.resetPassword( token, password, ( error ) => {
-          if ( error ) {
-            Bert.alert( error.reason, 'danger' );
+        Accounts.resetPassword(token, password, (error) => {
+          if (error) {
+            Bert.alert(error.reason, 'danger');
           } else {
-            Bert.alert( 'Password reset!', 'success' );
+            Bert.alert('Password reset!', 'success');
           }
         });
       }
     };
   },
-  handleSubmit( event ) {
+  handleSubmit(event) {
     event.preventDefault();
   },
   render() {

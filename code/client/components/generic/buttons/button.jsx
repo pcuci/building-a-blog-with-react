@@ -1,6 +1,6 @@
 Button = React.createClass({
   render() {
-    if ( this.props.href ) {
+    if (this.props.href) {
       return <a href={ this.props.href } className={ `btn btn-${ this.props.style }` }>
         { this.props.label }
       </a>;

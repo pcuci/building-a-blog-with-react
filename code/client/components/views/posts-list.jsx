@@ -1,26 +1,26 @@
 PostsList = React.createClass({
-  mixins: [ ReactMeteorData ],
+  mixins: [ReactMeteorData],
   getMeteorData() {
-    Meteor.subscribe( 'postsList' );
+    Meteor.subscribe('postsList');
 
     return {
-      posts: Posts.find().fetch().map( ( post ) => {
+      posts: Posts.find().fetch().map((post) => {
         return { uid: post._id, href: `/posts/${ post._id }/edit`, label: post.title };
       })
     };
   },
   handleNewPost() {
-    Meteor.call( 'newPost', ( error, postId ) => {
-      if ( error ) {
-        Bert.alert( error.reason, 'danger' );
+    Meteor.call('newPost', (error, postId) => {
+      if (error) {
+        Bert.alert(error.reason, 'danger');
       } else {
-        FlowRouter.go( `/posts/${ postId }/edit` );
-        Bert.alert( 'All set! Get to typin\'', 'success' );
+        FlowRouter.go(`/posts/${ postId }/edit`);
+        Bert.alert('All set! Get to typin\'', 'success');
       }
     });
   },
   renderPostsList() {
-    if ( this.data.posts.length > 0 ) {
+    if (this.data.posts.length > 0) {
       return <ListGroup linked={ true } items={ this.data.posts } />;
     } else {
       return <WarningAlert>No posts found.</WarningAlert>;

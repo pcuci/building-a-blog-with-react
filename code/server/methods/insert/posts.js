@@ -1,5 +1,5 @@
 Meteor.methods({
   newPost() {
-    return Posts.insert( {} );
+    return Posts.insert({});
   }
 });

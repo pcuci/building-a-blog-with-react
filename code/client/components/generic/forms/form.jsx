@@ -1,12 +1,12 @@
 Form = React.createClass({
-  handleSubmit( event ) {
+  handleSubmit(event) {
     event.preventDefault();
   },
   componentDidMount() {
     let validations = this.props.validations;
 
-    if ( validations ) {
-      $( this.refs.form ).validate( validations );
+    if (validations) {
+      $(this.refs.form).validate(validations);
     }
   },
   render() {
